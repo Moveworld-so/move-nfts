@@ -1,0 +1,24 @@
+[package]
+name = "mint_pool"
+version = "0.1.0"
+description = "mint_pool_service"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "mint_pool"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.20.1"
+anchor-spl = "0.20.1"
+spl-associated-token-account = "1.0.2"
+spl-token = { version = "3.1.1", features = ["no-entrypoint"] }
+metaplex-token-metadata = { version = "0.0.1", features = [ "no-entrypoint" ] }
+solana-program = "1.8.1"
